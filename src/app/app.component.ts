@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import data from './data/data.json';
-import data2 from './data/data2.json';
 import { IMessages } from 'src/app/models/data.interface';
 
 @Component({
@@ -10,28 +9,27 @@ import { IMessages } from 'src/app/models/data.interface';
 })
 export class AppComponent implements OnInit {
   title = 'tg';
-  // data: IMessages = data as IMessages;
-  data: IMessages = data2 as IMessages;
+  data: IMessages = data as IMessages;
 
   ngOnInit(): void {
-    console.log('Общее кол-во сообщений: ', this.data.messages.length)
-    console.log('Богдан: ', this.calcCountMessages('Bogdan'));
-    console.log('Процент сообщений Богдана: ', Math.round(this.calcCountMessages('Bogdan')/(this.calcCountMessages('Bogdan') + this.calcCountMessages('Викуля'))*100));
-    console.log('Викуля: ', this.calcCountMessages('Викуля'));
-    console.log('Процент сообщений Викули: ', Math.round(this.calcCountMessages('Викуля')/(this.calcCountMessages('Bogdan') + this.calcCountMessages('Викуля'))*100));
-    console.log('Типы сообщений: ', this.getAllTypesMessages());
-    console.log('Ключи: ', this.getUniqueKeys());
-    console.log('Стикеры Викули: ', this.sortStickersByCountDescending(this.calcCountStickers()));
-    console.log('Голосовые от Викули: ', this.calcCountVoice('Викуля'));
-    console.log('Процент голосовых Викули: ', this.calcCountVoice('Викуля')/this.calcCountMessages('Викуля')*100);
-    console.log('Самое длинное голосовое Викули: ', this.foundTheLongestVoice());
-    console.log('Кол-во кружочков Викули: ', this.calcCountVideo('Викуля'));
+    // console.log('Общее кол-во сообщений: ', this.data.messages.length)
+    // console.log('Богдан: ', this.calcCountMessages('Bogdan'));
+    // console.log('Процент сообщений Богдана: ', Math.round(this.calcCountMessages('Bogdan')/(this.calcCountMessages('Bogdan') + this.calcCountMessages('Викуля'))*100));
+    // console.log('Викуля: ', this.calcCountMessages('Викуля'));
+    // console.log('Процент сообщений Викули: ', Math.round(this.calcCountMessages('Викуля')/(this.calcCountMessages('Bogdan') + this.calcCountMessages('Викуля'))*100));
+    // console.log('Типы сообщений: ', this.getAllTypesMessages());
+    // console.log('Ключи: ', this.getUniqueKeys());
+    // console.log('Стикеры Викули: ', this.sortStickersByCountDescending(this.calcCountStickers()));
+    // console.log('Голосовые от Викули: ', this.calcCountVoice('Викуля'));
+    // console.log('Процент голосовых Викули: ', this.calcCountVoice('Викуля')/this.calcCountMessages('Викуля')*100);
+    // console.log('Самое длинное голосовое Викули: ', this.foundTheLongestVoice());
+    // console.log('Кол-во кружочков Викули: ', this.calcCountVideo('Викуля'));
 
-    console.log('котенок: ', this.calcCountName('котенок'));
-    console.log('кусенька, куся, кусь: ', this.calcCountName('кусенька, куся, кусь'));
-    console.log('малышка, малыш: ', this.calcCountName('малышка, малыш'));
-    console.log('нереалочка: ', this.calcCountName('нереалочка'));
-    console.log('красавица: ', this.calcCountName('красавица'));
+    // console.log('котенок: ', this.calcCountName('котенок'));
+    // console.log('кусенька, куся, кусь: ', this.calcCountName('кусенька, куся, кусь'));
+    // console.log('малышка, малыш: ', this.calcCountName('малышка, малыш'));
+    // console.log('нереалочка: ', this.calcCountName('нереалочка'));
+    // console.log('красавица: ', this.calcCountName('красавица'));
   }
 
   calcCountMessages(person: string) {
