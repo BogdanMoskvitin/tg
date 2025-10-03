@@ -1,0 +1,74 @@
+@import '../../../assets/styles/variables.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    background: $main_color;
+    height: 100vh;
+}
+
+.start {
+    padding: 20px;
+    max-width: 1024px;
+}
+
+.title {
+    font-family: "Nunito", sans-serif;
+    line-height: 0.8;
+    font-weight: bold;
+    font-size: 90px;
+    color: $light_color;
+    margin: 0;
+}
+
+.title-margin {
+    margin: 50px 0 0;
+}
+
+.img {
+    height: 66px;
+}
+
+.title2 {
+    font-family: "Nunito", sans-serif;
+    line-height: 1;
+    font-size: 30px;
+    color: $dark_color;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.title2-margin {
+    margin: 10px 0 0;
+}
+
+.subtitle {
+    font-family: "Nunito", sans-serif;
+    line-height: 0.8;
+    font-size: 20px;
+    color: $dark_color;
+    font-style: italic;
+    margin: 20px 0 0;
+}
+
+.btn {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: $dark_color;
+    padding: 5px 10px;
+    margin: 10px 0 0;
+    border: 1px solid $dark_color;
+    border-radius: 5px;
+    background: $light_color;
+    cursor: pointer;
+}
+
+.scale-up {
+    transition: transform 0.3s ease;
+}
+
+.scale-up:hover {
+    transform: scale(1.1);
+}

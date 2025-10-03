@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="auth">
+        <p class="title">Ты точно куся?)</p>
+        <p class="title2 title2-margin">В каком месте находится наша любимая лавочка?</p>
+        <div class="flex">
+            <input type="text" [(ngModel)]="answer" (input)="onInput()" placeholder="Введите ответ"/>
+            <button class="btn scale-up" (click)="checkAnswer()">Ответить</button>
+        </div>
+        <p *ngIf="isError" class="error">Неправильный ответ</p>
+    </div>
+</div>

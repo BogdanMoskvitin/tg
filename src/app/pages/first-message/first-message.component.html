@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="question">
+        <div>
+            <p class="title">
+                {{ question.id }}. {{ question.question }}
+                <mat-icon class="icon">{{ question.icon }}</mat-icon>
+            </p>
+            <div class="flexbox scale-up" *ngFor="let answer of question.answers">
+                <button 
+                    class="answer" 
+                    [ngClass]="{'correct': answer.isCorrect && answer.isSelected, 'incorrect': !answer.isCorrect && answer.isSelected}"
+                    (click)="selectAnswer(answer)"
+                    [disabled]="isSuccess">
+                    {{ answer.title }}
+                </button>
+            </div>
+            <div class="box-messages" [class.show]="isSuccess">
+                <div 
+                    class="message" 
+                    *ngFor="let message of displayedMessages"
+                    [class]="'message' + message.id">
+                    {{ message.text }}
+                </div>
+            </div>
+        </div>
+        <button 
+            class="btn scale-up" 
+            routerLink="/first-offline">
+            Далее
+        </button>
+    </div>
+</div>

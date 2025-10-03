@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="question">
+        <div>
+            <p class="title">
+                {{ question.id }}. {{ question.question }}
+                <mat-icon class="icon">{{ question.icon }}</mat-icon>
+            </p>
+            <div class="flexbox scale-up" *ngFor="let answer of question.answers">
+                <div class="flexrow">
+                    <button 
+                        class="answer" 
+                        [ngClass]="{'correct': answer.isCorrect && answer.isSelected, 'incorrect': !answer.isCorrect && answer.isSelected}"
+                        (click)="selectAnswer(answer)">
+                        {{ answer.title }}
+                    </button>
+                    <div class="stat" *ngIf="isSuccess">
+                        <span class="stat__value">{{ answer.value }}</span>
+                        <span class="stat__text">{{ answer.text }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button 
+            class="btn scale-up" 
+            routerLink="/longest-voice-message">
+            Далее
+        </button>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="question">
+        <div>
+            <p class="title">
+                {{ question.id }}. {{ question.question }}
+                <mat-icon class="icon">{{ question.icon }}</mat-icon>
+            </p>
+            <div class="flexbox scale-up" *ngFor="let answer of question.answers">
+                <div class="flexrow">
+                    <img 
+                        class="img" 
+                        [ngClass]="getClassForImgAnswer(answer)" 
+                        [src]="answer.img" 
+                        (click)="selectAnswer(answer)"
+                    />
+                    <div class="stat" *ngIf="isSuccess">
+                        <span class="stat__value">{{ answer.value }}</span>
+                        <span class="stat__text"> сообщений </span>
+                        <span class="stat__percent">({{ answer.percent }}%)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button 
+            class="btn scale-up" 
+            routerLink="/favorite-sticker">
+            Далее
+        </button>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+@import '../../../assets/styles/variables.scss';
+
+.time {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: $dark_color;
+    color: $light_color;
+}

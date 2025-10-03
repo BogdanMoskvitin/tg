@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="finish">
+        <p class="title">
+            Викуля<img 
+                class="img"
+                src="../../../assets/svg/cat.svg" 
+                alt="cat"
+            >
+        </p>
+        <p class="subtitle">моя нереалочка</p>
+        <div *ngFor="let text of displayedTexts; let i = index" class="text">
+            {{ text }}
+        </div>
+        <a 
+            href="https://stav.prostoreshop.ru/product-category/smartfony/apple/"
+            class="link"
+            target="_blank"
+            *ngIf="isLink">
+            А где приз!?
+        </a>
+    </div>
+</div>
+

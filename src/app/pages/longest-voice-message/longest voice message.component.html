@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="question">
+        <div>
+            <p class="title">
+                {{ question.id }}. {{ question.question }}
+                <mat-icon class="icon">{{ question.icon }}</mat-icon>
+            </p>
+            <div class="flexbox scale-up" *ngFor="let answer of question.answers">
+                <button 
+                    class="answer" 
+                    [ngClass]="{'correct': answer.isCorrect && answer.isSelected, 'incorrect': !answer.isCorrect && answer.isSelected}"
+                    (click)="selectAnswer(answer)"
+                    [disabled]="isSuccess">
+                    {{ answer.title }}
+                </button>
+            </div>
+            <div class="box-messages" [class.show]="isSuccess">
+                <ng-container *ngFor="let message of displayedMessages">
+                    <div 
+                        *ngIf="!message.type"
+                        class="message" 
+                        [class]="'message' + message.id">
+                        {{ message.text }}
+                    </div>
+                    <div *ngIf="message.type == 'voice'" class="voice-message">
+                        <div class="voice-message__btn">
+                            <mat-icon class="voice-message__btn_icon">play_arrow</mat-icon>
+                        </div>
+                        <div class="voice-message__body">
+                            <div class="voice-message__body_wave">
+                                <div 
+                                    class="voice-message__body_wave-item"
+                                    *ngFor="let item of waveItems"
+                                    [style.height]="item.height + 'px'">
+                                </div>
+                            </div>
+                            <div class="voice-message__body_time">13:32</div>
+                        </div>
+                    </div>
+                    <img *ngIf="message.type == 'sticker'" class="sticker" [src]="message.src" />
+                </ng-container>
+            </div>
+        </div>
+        <button 
+            class="btn scale-up" 
+            routerLink="/total-video-messages"
+        >
+            Далее
+        </button>
+    </div>
+</div>

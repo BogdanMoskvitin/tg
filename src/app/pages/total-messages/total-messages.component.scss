@@ -1,0 +1,78 @@
+@import '../../../assets/styles/variables.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    background: $main_color;
+    height: 100vh;
+}
+
+.question {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1024px;
+}
+
+.title {
+    font-family: "Nunito", sans-serif;
+    line-height: 1;
+    font-weight: bold;
+    font-size: 30px;
+    color: $dark_color;
+    margin: 0 0 20px;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    margin-left: 5px;
+    font-size: 30px;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.answer {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: $dark_color;
+    padding: 5px 10px;
+    border: 1px solid $dark_color;
+    border-radius: 5px;
+    background: $light_color;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.correct {
+    background: $correct_color;
+}
+
+.incorrect {
+    background: $incorrect_color;
+}
+
+.btn {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: $dark_color;
+    padding: 5px 10px;
+    border: 1px solid $dark_color;
+    border-radius: 5px;
+    background: $light_color;
+    cursor: pointer;
+}
+
+.scale-up {
+    transition: transform 0.3s ease;
+}
+
+.scale-up:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,115 @@
+@import '../../../assets/styles/variables.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    background: $main_color;
+    min-height: 100%;
+}
+
+.question {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1024px;
+}
+
+.title {
+    font-family: "Nunito", sans-serif;
+    line-height: 1;
+    font-weight: bold;
+    font-size: 30px;
+    color: $dark_color;
+    margin: 0 0 20px;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    margin-left: 5px;
+    font-size: 30px;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.answer {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: $dark_color;
+    padding: 5px 10px;
+    border: 1px solid $dark_color;
+    border-radius: 5px;
+    background: $light_color;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.correct {
+    background: $correct_color;
+}
+
+.incorrect {
+    background: $incorrect_color;
+}
+
+.box-messages {
+    background: url(../../../assets/images/tg.jpg);
+    background-size: cover;
+    width: 300px;
+    height: 430px;
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.show {
+    opacity: 1;
+}
+
+.message {
+    color: #fff;
+    display: inline-block;
+    align-self:flex-start;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: pre;
+}
+
+.message1 {
+    background: $tg_dark_color;
+}
+
+.message2 {
+    background: $tg_light_color;
+    margin-left: auto;
+}
+
+.btn {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: $dark_color;
+    padding: 5px 10px;
+    border: 1px solid $dark_color;
+    border-radius: 5px;
+    background: $light_color;
+    cursor: pointer;
+}
+
+.scale-up {
+    transition: transform 0.3s ease;
+}
+
+.scale-up:hover {
+    transform: scale(1.1);
+}
