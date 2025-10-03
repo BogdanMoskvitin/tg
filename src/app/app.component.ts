@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import data from './data/data.json';
-import { IMessages } from 'src/app/models/data.interface';
+// import data from './data/data.json';
+// import { IMessages } from 'src/app/models/data.interface';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { IMessages } from 'src/app/models/data.interface';
 })
 export class AppComponent implements OnInit {
   title = 'tg';
-  data: IMessages = data as IMessages;
+  // data: IMessages = data as IMessages;
 
   ngOnInit(): void {
     // console.log('Общее кол-во сообщений: ', this.data.messages.length)
@@ -32,96 +32,96 @@ export class AppComponent implements OnInit {
     // console.log('красавица: ', this.calcCountName('красавица'));
   }
 
-  calcCountMessages(person: string) {
-    let count = 0;
-    this.data.messages.forEach(element => {
-      if (element.from === person) count++;
-    });
-    return count;
-  }
+  // calcCountMessages(person: string) {
+  //   let count = 0;
+  //   this.data.messages.forEach(element => {
+  //     if (element.from === person) count++;
+  //   });
+  //   return count;
+  // }
 
-  getAllTypesMessages() {
-    let arrTypes: string[] = [];
-    this.data.messages.forEach(element => {
-      if (!arrTypes.includes(element.type)) {
-        arrTypes.push(element.type);
-      }
-    });
-    return arrTypes;
-  }
+  // getAllTypesMessages() {
+  //   let arrTypes: string[] = [];
+  //   this.data.messages.forEach(element => {
+  //     if (!arrTypes.includes(element.type)) {
+  //       arrTypes.push(element.type);
+  //     }
+  //   });
+  //   return arrTypes;
+  // }
 
-  getUniqueKeys() {
-    const uniqueKeys = new Set();
-    this.data.messages.forEach(obj => {
-      Object.keys(obj).forEach(key => {
-        uniqueKeys.add(key);
-      });
-    });
-    return Array.from(uniqueKeys);
-  }
+  // getUniqueKeys() {
+  //   const uniqueKeys = new Set();
+  //   this.data.messages.forEach(obj => {
+  //     Object.keys(obj).forEach(key => {
+  //       uniqueKeys.add(key);
+  //     });
+  //   });
+  //   return Array.from(uniqueKeys);
+  // }
 
-  calcCountStickers() {
-    let arrStickers: Array<{thumbnail: string, count: number}> = [];
-    this.data.messages.forEach(element => {
-      if (element.from === 'Викуля' && element.thumbnail) {
-        const existingEntry = arrStickers.find(item => item.thumbnail === element.thumbnail);
-        if (existingEntry) {
-          existingEntry.count += 1;
-        } else {
-          arrStickers.push({ thumbnail: element.thumbnail, count: 1 });
-        }
-      }
-    });
-    return arrStickers;
-  }
+  // calcCountStickers() {
+  //   let arrStickers: Array<{thumbnail: string, count: number}> = [];
+  //   this.data.messages.forEach(element => {
+  //     if (element.from === 'Викуля' && element.thumbnail) {
+  //       const existingEntry = arrStickers.find(item => item.thumbnail === element.thumbnail);
+  //       if (existingEntry) {
+  //         existingEntry.count += 1;
+  //       } else {
+  //         arrStickers.push({ thumbnail: element.thumbnail, count: 1 });
+  //       }
+  //     }
+  //   });
+  //   return arrStickers;
+  // }
 
-  sortStickersByCountDescending(arr: Array<{thumbnail: string, count: number}>): Array<{thumbnail: string, count: number}> {
-    return arr.sort((a, b) => b.count - a.count);
-  }
+  // sortStickersByCountDescending(arr: Array<{thumbnail: string, count: number}>): Array<{thumbnail: string, count: number}> {
+  //   return arr.sort((a, b) => b.count - a.count);
+  // }
 
-  calcCountVoice(person: string) {
-    let count = 0;
-    this.data.messages.forEach(el => {
-      if (el.from === person && el.media_type && el.media_type === 'voice_message') {
-        count++;
-      }
-    })
-    return count;
-  }
+  // calcCountVoice(person: string) {
+  //   let count = 0;
+  //   this.data.messages.forEach(el => {
+  //     if (el.from === person && el.media_type && el.media_type === 'voice_message') {
+  //       count++;
+  //     }
+  //   })
+  //   return count;
+  // }
 
-  foundTheLongestVoice() {
-    let long = 0;
-    this.data.messages.forEach(el => {
-      if (el.media_type && el.media_type === 'voice_message') {
-        if (long < el.file_size && el.file_size !== 3396351 && el.file_size !== 3194021) {
-          long = el.file_size;
-        }
-      }
-    })
-    return long;
-  }
+  // foundTheLongestVoice() {
+  //   let long = 0;
+  //   this.data.messages.forEach(el => {
+  //     if (el.media_type && el.media_type === 'voice_message') {
+  //       if (long < el.file_size && el.file_size !== 3396351 && el.file_size !== 3194021) {
+  //         long = el.file_size;
+  //       }
+  //     }
+  //   })
+  //   return long;
+  // }
 
-  calcCountVideo(person: string) {
-    let count = 0;
-    this.data.messages.forEach(el => {
-      if (el.from === person && el.file && el.file.includes('round_video_messages')) {
-        count++;
-      }
-    })
-    return count;
-  }
+  // calcCountVideo(person: string) {
+  //   let count = 0;
+  //   this.data.messages.forEach(el => {
+  //     if (el.from === person && el.file && el.file.includes('round_video_messages')) {
+  //       count++;
+  //     }
+  //   })
+  //   return count;
+  // }
 
-  calcCountName(name: string) {
-    const names = name.split(',').map(n => n.trim().toLowerCase());
-    let count = 0;
-    this.data.messages.forEach(el => {
-      if (el.from === 'Bogdan' && el.text && typeof el.text === 'string') {
-        const textLower = el.text.toLowerCase();
-        if (names.some(name => textLower.includes(name))) {
-          count++;
-        }
-      }
-    });
-    return count;
-  }
+  // calcCountName(name: string) {
+  //   const names = name.split(',').map(n => n.trim().toLowerCase());
+  //   let count = 0;
+  //   this.data.messages.forEach(el => {
+  //     if (el.from === 'Bogdan' && el.text && typeof el.text === 'string') {
+  //       const textLower = el.text.toLowerCase();
+  //       if (names.some(name => textLower.includes(name))) {
+  //         count++;
+  //       }
+  //     }
+  //   });
+  //   return count;
+  // }
 }
