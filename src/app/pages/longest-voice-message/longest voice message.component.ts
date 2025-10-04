@@ -65,7 +65,7 @@ export class LongestVoiceMessageComponent implements OnInit {
     {
       id: 2,
       type: 'sticker',
-      src: '../../../assets/images/2.jpg'
+      src: 'assets/images/2.jpg'
     },
     {
       id: 1,
@@ -78,7 +78,7 @@ export class LongestVoiceMessageComponent implements OnInit {
     {
       id: 2,
       type: 'sticker',
-      src: '../../../assets/images/3.jpg'
+      src: 'assets/images/3.jpg'
     },
   ]
   displayedMessages: IMessage[] = [];

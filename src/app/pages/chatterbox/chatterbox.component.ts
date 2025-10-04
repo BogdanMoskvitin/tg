@@ -15,13 +15,13 @@ export class ChatterboxComponent {
       {
         id: 1,
         isCorrect: true,
-        img: '../../../assets/images/victoria.jpg',
+        img: 'assets/images/victoria.jpg',
         isSelected: false,
         value: 37453,
         percent: 54,
       }, {
         id: 2,
-        img: '../../../assets/images/bogdan.jpg',
+        img: 'assets/images/bogdan.jpg',
         isSelected: false,
         value: 31933,
         percent: 46,
